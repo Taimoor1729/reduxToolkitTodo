@@ -1,6 +1,9 @@
+// app/store.js
 import { configureStore } from "@reduxjs/toolkit";
-import TodoSlice from "../features/todo/TodoSlice";
+import todoReducer from "../features/todo/TodoSlice"; // Ensure the path is correct
 
 export const store = configureStore({
-    reducer: TodoSlice
-})
+    reducer: {
+        todo: todoReducer, // Map the slice reducer to a key
+    }
+});
